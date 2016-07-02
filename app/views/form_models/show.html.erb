@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+NAME: <%= @form_model.name %><br>
+TIME LIMIT: <%= @form_model.time_limit %><br>
+DOWNLOAD LIMIT: <%= @form_model.download_limit %><br>
+UPLOAD LIMIT: <%= @form_model.upload_limit %><br>
+
+<%= link_to 'Edit', edit_form_model_path(@form_model, slug: @form_model.slug) %> |
+<%= link_to 'Back', form_models_path %>

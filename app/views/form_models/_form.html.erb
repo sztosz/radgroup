@@ -1,0 +1,22 @@
+<%= form_for(@form_model) do |f| %>
+  <% if form_model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(form_model.errors.count, "error") %> prohibited this form_model from being saved:</h2>
+
+      <ul>
+      <% form_model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= text_field_tag '[form_model]name', @form_model.name %>
+  <%= text_field_tag '[form_model]time_limit', @form_model.time_limit %>
+  <%= text_field_tag '[form_model]download_limit', @form_model.download_limit %>
+  <%= text_field_tag '[form_model]upload_limit', @form_model.upload_limit %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

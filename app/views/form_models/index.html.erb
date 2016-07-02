@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Form Models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time Limit</th>
+      <th>Download Limit</th>
+      <th>Upload Limit</th>
+      <th>ACTIONS</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% @form_models.each do |form_model| %>
+      <tr>
+        <td><%= form_model.name%></td>
+        <td><%= form_model.time_limit%></td>
+        <td><%= form_model.download_limit%></td>
+        <td><%= form_model.upload_limit%></td>
+        <td>
+          <%= link_to 'Show', form_model_path(form_model, slug: form_model.slug) %>
+          <%= link_to 'Edit', edit_form_model_path(form_model, slug: form_model.slug) %>
+          <%= link_to 'Destroy', form_model, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Form Model', new_form_model_path %>
