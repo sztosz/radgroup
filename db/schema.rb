@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20160702095542) do
 
   create_table "rad_check_groups", force: :cascade do |t|
     t.string "groupname"
-    t.string "attribute"
+    t.string "attr"
     t.string "op"
     t.string "value"
   end

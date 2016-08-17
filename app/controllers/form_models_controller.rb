@@ -69,7 +69,7 @@ class FormModelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def form_model_params
-      params.fetch(:form_model).permit(:name, :time_limit, :download_limit, :upload_limit)
+      params.fetch(:form_model).permit(:name, :time_limit, :download_limit, :upload_limit, :cleartext_password)
           .merge(slug: params[:form_model][:name].parameterize)
     end
 end
